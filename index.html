@@ -1,0 +1,284 @@
+<title>fighterGame</title>
+<canvas></canvas>
+<div id="main">
+    <div class="upgrades numbers" id="divFighters">
+        <div>I</div>
+        <div>II</div>
+        <div>III</div>
+        <div>IV</div>
+        <div>V</div>
+    </div>
+    <div class="upgrades w200" id="divFighters">
+        <div class="w200" id="f1"
+            style="background-image: url(./img/czerwony.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$0 mig-19</p>
+        </div>
+        <div class="w200" id="f2"
+            style="background-image: url(./img/su17.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$100 Su-17</p>
+        </div>
+        <div class="w200" id="f3"
+            style="background-image: url(./img/mig29-KiowGhost-2.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$250 Mig-29-KiovGhost</p>
+        </div>
+        <div class="w200" id="f4"
+            style="background-image: url(./img/f16v1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$450 f-16</p>
+        </div>
+        <div class="w200" id="f5"
+            style="background-image: url(./img/F-35.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$500 f-35</p>
+        </div>
+    </div>
+    <div class="upgrades" id="divEngine">
+        <div id="e1"
+            style="width: 100px; background-image: url(./img/enginev1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$0 Engine1</p>
+        </div>
+        <div id="e2"
+            style="width: 100px; background-image: url(./img/enginev1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$50 Engine2</p>
+        </div>
+        <div id="e3"
+            style="width: 100px; background-image: url(./img/enginev1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$150 Engine3</p>
+        </div>
+        <div id="e4"
+            style="width: 100px; background-image: url(./img/enginev1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$350 Engine4</p>
+        </div>
+        <div id="e5"
+            style="width: 100px; background-image: url(./img/enginev1.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$500 Engine5</p>
+        </div>
+    </div>
+    <div class="upgrades w300" id="divGun">
+        <div class="w300" id="m1"
+            style="background-image: url(./img/m1919.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$0 m1919</p>
+        </div>
+        <div class="w300" id="m2"
+            style="background-image: url(./img/mg42.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$150 mg42</p>
+        </div>
+        <div class="w300" id="m3"
+            style="background-image: url(./img/50Cal_Machine_Gun.webp); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$400 30mm</p>
+        </div>
+        <div class="w300" id="m4"
+            style="background-image: url(./img/50Cal_Machine_Gun.webp); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$500 50cal</p>
+        </div>
+        <div class="w300" id="m5"
+            style="background-image: url(./img/minigun.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$700 minigun</p>
+        </div>
+    </div>
+    <div class="upgrades w300" id="divMissles">
+        <div class="w300" id="r1"
+            style="background-image: url(./img/AG.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$0 missle v1</p>
+        </div>
+        <div class="w300" id="r2"
+            style="background-image: url(./img/VL-SRSAM.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$200 missle v2</p>
+        </div>
+        <div class="w300" id="r3"
+            style="background-image: url(./img/AGS.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$300 air to ground missle x7</p>
+        </div>
+        <div class="w300" id="r4"
+            style="background-image: url(./img/missle.jpg); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$400 air to air missle v1</p>
+        </div>
+        <div class="w300" id="r5"
+            style="background-image: url(./img/topAAM.png); background-repeat: no-repeat; background-size: contain;">
+            <p class="p">$500 air to air missle v2</p>
+        </div>
+    </div>
+    <button id="start">FIGHT! (1/2)</button>
+</div>
+
+<div id="log1" class="log"></div>
+<div id="log2" class="log"></div>
+
+<div class="money" id="mo1">
+    <p class="kills">0</p> $200
+</div>
+<div class="money" id="mo2">
+    <p class="kills">0</p> $200
+</div>
+
+<div id="options">
+    <div class="stop" id="stopX">Stop x axis</div>
+    <div class="stop" id="stopY">Stop x axis</div>
+    <div class="stop" id="coop" style="background-color: darkred;">Coop mode</div>
+    <div class="stop" id="devMode" style="background-color: darkred;">Dev mode</div>
+</div>
+
+<style>
+    .stop {
+        color: #fff;
+        background-color: darkgreen;
+        text-align: center;
+        font-size: 25px;
+        line-height: 50px;
+    }
+
+    #options>div {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        margin: 10px;
+    }
+
+    #options {
+        border-radius: 10px;
+        display: none;
+        position: absolute;
+        top: 45%;
+        width: 1000px;
+        height: 600px;
+        left: 45%;
+        border: 1px solid #fff;
+        z-index: 1;
+    }
+
+    .log {
+        width: 220px;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    #log1 {
+        position: fixed;
+        bottom: 4vh;
+        left: 4vw;
+    }
+
+    #log2 {
+        position: fixed;
+        bottom: 4vh;
+        right: 4vw;
+    }
+
+    .money {
+        padding-left: 40px;
+        position: fixed;
+        color: #fff;
+        width: 400px;
+        height: 100px;
+        border: 1px solid #fff;
+        line-height: 100px;
+        font-size: 75px;
+    }
+
+    #mo1 {
+        border: 1px solid orange;
+        top: 4vh;
+        left: 6vw;
+    }
+
+    #mo2 {
+        top: 4vh;
+        right: 6vw;
+    }
+
+    .bar {
+        width: 5px;
+        display: inline-block;
+    }
+
+    button {
+        border-radius: 10px;
+        width: 1120px;
+        height: 100px;
+        position: absolute;
+        right: 65px;
+        bottom: 10;
+        background-color: #111;
+        color: rgb(206, 102, 5);
+        transition: 1s;
+        font-size: 50px;
+    }
+
+    .kills {
+        display: inline;
+        color: red;
+        position: static;
+    }
+
+    button:hover {
+        background-color: rgb(206, 102, 5);
+        color: #111;
+    }
+
+    .p {
+        position: relative;
+        height: 5px;
+        width: 100%;
+        top: 55;
+        left: 0;
+        color: #fff;
+        text-align: right;
+    }
+
+    body {
+        overflow: hidden;
+        margin: 0;
+        background-color: #000;
+        user-select: none;
+    }
+
+    div>div>div {
+        width: 100%;
+        min-width: 100px;
+        height: 100px;
+        border: 1px solid #fff;
+        margin: 4px;
+        border-radius: 10px;
+    }
+
+    .w300 {
+        width: 300px;
+    }
+
+    .w200 {
+        width: 200px;
+    }
+
+    .upgrades {
+        display: inline-block;
+        height: 710px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .numbers {
+        position: relative;
+        top: 44px;
+        left: 0;
+    }
+
+    #main {
+        position: fixed;
+        top: 300;
+        left: 45%;
+        z-index: 1;
+        width: 1200px;
+    }
+
+    .numbers>div {
+        color: #fff;
+        line-height: 100px;
+        font-size: 75px;
+        text-align: center;
+    }
+</style>
+<script src="./dist/index.js"></script>
